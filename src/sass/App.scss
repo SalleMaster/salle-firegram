@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+// Container
+.container {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+// Variables
+@import './variables';
+
+// Styles
+@import './navbar';
+@import './header';
+@import './uploadImage';
+@import './imageGallery';
+@import './progressBar';
+@import './imageModal';

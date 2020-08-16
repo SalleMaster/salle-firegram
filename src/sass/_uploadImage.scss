@@ -1,0 +1,34 @@
+.upload-image {
+  text-align: center;
+  margin-bottom: 50px;
+  label {
+    input {
+      display: none;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: $primary-color;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      border: 1px solid $primary-color;
+      margin: 0 auto;
+      cursor: pointer;
+
+      &:hover {
+        background: $light-color;
+      }
+    }
+  }
+
+  .output {
+    margin-top: 20px;
+    .error {
+      color: $dark-color;
+    }
+  }
+}
