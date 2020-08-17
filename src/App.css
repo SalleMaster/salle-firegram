@@ -11,15 +11,31 @@
   margin: 0 auto;
 }
 
+ul {
+  list-style: none;
+}
+
 .navbar .navbar-wrapper {
   padding: 20px 0;
   width: 80vw;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar .navbar-wrapper .logo {
   color: #ffa45c;
   font-size: 24px;
+}
+
+.navbar .navbar-wrapper .nav-list .nav-list-item {
+  color: #ffa45c;
+  cursor: pointer;
+}
+
+.navbar .navbar-wrapper .nav-list .nav-list-item:hover {
+  color: #ee8835;
 }
 
 .header {
@@ -140,4 +156,48 @@
 
 .image-modal .overlay .modal .close-btn span:nth-child(2) {
   transform: rotate(-45deg);
+}
+
+.login {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #f8f8f8;
+}
+
+.login .login-wrapper {
+  padding: 100px;
+  background: #fff;
+  color: #5d5d5a;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+.login .login-wrapper h1 {
+  color: #ffa45c;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.login .login-wrapper h3 {
+  font-size: 2rem;
+}
+
+.login .login-wrapper p {
+  margin-bottom: 2rem;
+}
+
+.login .login-wrapper button {
+  background: green;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login .login-wrapper button:hover, .login .login-wrapper button:active {
+  background: #019e01;
 }

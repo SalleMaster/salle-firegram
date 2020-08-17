@@ -11,6 +11,11 @@
   margin: 0 auto;
 }
 
+// List
+ul {
+  list-style: none;
+}
+
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
@@ -24,3 +29,4 @@
 @import './imageGallery';
 @import './progressBar';
 @import './imageModal';
+@import './login';

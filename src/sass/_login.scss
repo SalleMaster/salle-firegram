@@ -1,0 +1,44 @@
+.login {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #f8f8f8;
+
+  .login-wrapper {
+    padding: 100px;
+    background: #fff;
+    color: $dark-color;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    text-align: center;
+
+    h1 {
+      color: $primary-color;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    button {
+      background: green;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        background: rgb(1, 158, 1);
+      }
+    }
+  }
+}
