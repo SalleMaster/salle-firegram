@@ -7,26 +7,34 @@ import store from './store';
 
 // Hooks
 import useAuthStatus from './hooks/useAuthStatus';
+import { setUser } from './actions/auth';
 
 // Components
-import Navbar from './components/Navbar';
-import Header from './components/Header';
-import UploadImage from './components/UploadImage';
-import ImageGallery from './components/ImageGallery';
-import ImageModal from './components/ImageModal';
-import Login from './components/Login';
+// import Navbar from './components/Navbar';
+// import Header from './components/Header';
+// import UploadImage from './components/UploadImage';
+// import ImageGallery from './components/ImageGallery';
+// import ImageModal from './components/ImageModal';
+// import Login from './components/Login';
+import Landing from './components/Landing';
 
 const App = () => {
   const [selectedImg, setSelectedImg] = useState(null);
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
-  // listen for auth status changes
-  useAuthStatus(setUser);
+  // // listen for auth status changes
+  // useAuthStatus(setUser);
+
+  // Set User
+  useEffect(() => {
+    store.dispatch(setUser());
+  }, []);
 
   return (
     <Provider store={store}>
-      <Fragment>
-        {!user ? (
+      <Landing selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      {/* <Fragment>
+        {false ? (
           <Login />
         ) : (
           <Fragment>
@@ -44,7 +52,7 @@ const App = () => {
             </div>
           </Fragment>
         )}
-      </Fragment>
+      </Fragment> */}
     </Provider>
   );
 };
