@@ -1,6 +1,10 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import './App.css';
 
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
+
 // Hooks
 import useAuthStatus from './hooks/useAuthStatus';
 
@@ -20,26 +24,28 @@ const App = () => {
   useAuthStatus(setUser);
 
   return (
-    <div className='App'>
-      {!user ? (
-        <Login />
-      ) : (
-        <Fragment>
-          <Navbar />
-          <div className='container'>
-            <Header />
-            <UploadImage />
-            <ImageGallery setSelectedImg={setSelectedImg} />
-            {selectedImg && (
-              <ImageModal
-                selectedImg={selectedImg}
-                setSelectedImage={setSelectedImg}
-              />
-            )}
-          </div>
-        </Fragment>
-      )}
-    </div>
+    <Provider store={store}>
+      <Fragment>
+        {!user ? (
+          <Login />
+        ) : (
+          <Fragment>
+            <Navbar />
+            <div className='container'>
+              <Header />
+              <UploadImage />
+              <ImageGallery setSelectedImg={setSelectedImg} />
+              {selectedImg && (
+                <ImageModal
+                  selectedImg={selectedImg}
+                  setSelectedImage={setSelectedImg}
+                />
+              )}
+            </div>
+          </Fragment>
+        )}
+      </Fragment>
+    </Provider>
   );
 };
 

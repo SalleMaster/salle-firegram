@@ -10,7 +10,13 @@ const Login = () => {
         <h1>FireGram</h1>
         <h3>Sign in to FireGram</h3>
         <p>www.firegram.com</p>
-        <button onClick={useGoogleSignIn}>Sign in with Google</button>
+        <div className='button-wrapper'>
+          <button className='btn-sign-up'>Sign up</button>
+          <button className='btn-sign-in'>Sign in </button>
+          <button className='btn-google' onClick={useGoogleSignIn}>
+            Sign in with Google
+          </button>
+        </div>
       </div>
     </div>
   );

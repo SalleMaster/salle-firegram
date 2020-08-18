@@ -189,15 +189,44 @@ ul {
   margin-bottom: 2rem;
 }
 
+.login .login-wrapper .button-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
 .login .login-wrapper button {
-  background: green;
-  color: #fff;
+  color: #5d5d5a;
   border: none;
   padding: 10px;
   font-size: 1rem;
   cursor: pointer;
 }
 
-.login .login-wrapper button:hover, .login .login-wrapper button:active {
-  background: #019e01;
+.login .login-wrapper button.btn-sign-up {
+  background: #ffa45c;
+  color: #fff;
+}
+
+.login .login-wrapper button.btn-sign-up:hover {
+  background: #ff8b2c;
+}
+
+.login .login-wrapper button.btn-sign-in {
+  background: #1567ff;
+  color: #fff;
+}
+
+.login .login-wrapper button.btn-sign-in:hover {
+  background: #0052eb;
+}
+
+.login .login-wrapper button.btn-google {
+  grid-column: span 2;
+  background: #009b00;
+  color: #fff;
+}
+
+.login .login-wrapper button.btn-google:hover {
+  background: green;
 }

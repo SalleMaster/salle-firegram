@@ -27,17 +27,43 @@
       margin-bottom: 2rem;
     }
 
+    .button-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
     button {
-      background: green;
-      color: #fff;
+      color: $dark-color;
       border: none;
       padding: 10px;
       font-size: 1rem;
       cursor: pointer;
 
-      &:hover,
-      &:active {
-        background: rgb(1, 158, 1);
+      &.btn-sign-up {
+        background: $primary-color;
+        color: #fff;
+
+        &:hover {
+          background: #ff8b2c;
+        }
+      }
+      &.btn-sign-in {
+        background: rgb(21, 103, 255);
+        color: #fff;
+
+        &:hover {
+          background: rgb(0, 82, 235);
+        }
+      }
+      &.btn-google {
+        grid-column: span 2;
+        background: rgb(0, 155, 0);
+        color: #fff;
+
+        &:hover {
+          background: rgb(0, 128, 0);
+        }
       }
     }
   }
