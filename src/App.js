@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // Redux
@@ -17,7 +18,7 @@ import { setUser } from './actions/auth';
 // import ImageModal from './components/ImageModal';
 // import Login from './components/Login';
 import Landing from './components/Landing';
-import routes from './routing/routes';
+import Routes from './routing/Routes';
 
 const App = () => {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -36,7 +37,8 @@ const App = () => {
       <Router>
         <Fragment>
           <Switch>
-            <Route components={routes} />
+            <Route exact path='/' component={Landing} />
+            <Route component={Routes} />
           </Switch>
         </Fragment>
       </Router>

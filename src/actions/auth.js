@@ -20,3 +20,20 @@ export const setUser = () => (dispatch) => {
     }
   });
 };
+
+// Sign Up User
+export const signUp = (formData) => {
+  const { email, password, displayName } = formData;
+
+  // sign up the user & add firestore data
+  auth
+    .createUserWithEmailAndPassword(email, password)
+    .then((cred) => {
+      cred.user.updateProfile({
+        displayName: displayName,
+      });
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+};
