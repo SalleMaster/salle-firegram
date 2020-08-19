@@ -54,6 +54,8 @@ ul {
 }
 
 .upload-image {
+  display: flex;
+  justify-content: center;
   text-align: center;
   margin-bottom: 50px;
 }

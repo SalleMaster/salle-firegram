@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Google SignIn
 import useGoogleSignIn from '../hooks/useGoogleSignIn';
@@ -11,7 +12,9 @@ const Login = () => {
         <h3>Sign in to FireGram</h3>
         <p>www.firegram.com</p>
         <div className='button-wrapper'>
-          <button className='btn-sign-up'>Sign up</button>
+          <Link to='/sign-up' className='btn-sign-up'>
+            Sign up
+          </Link>
           <button className='btn-sign-in'>Sign in </button>
           <button className='btn-google' onClick={useGoogleSignIn}>
             Sign in with Google

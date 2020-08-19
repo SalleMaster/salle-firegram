@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 // Components
@@ -11,8 +11,6 @@ import ImageGallery from './ImageGallery';
 import ImageModal from './ImageModal';
 
 const Landing = ({ selectedImg, setSelectedImg, user }) => {
-  console.log(user);
-
   return (
     <Fragment>
       {!user ? (
@@ -38,9 +36,7 @@ const Landing = ({ selectedImg, setSelectedImg, user }) => {
 };
 
 Landing.propTypes = {
-  selectedImg: PropTypes.string.isRequired,
-  setSelectedImg: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
+  // user: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({

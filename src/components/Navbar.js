@@ -1,7 +1,6 @@
 import React from 'react';
 
 // Hooks
-import useSignOut from '../hooks/useSingOut';
 import useSingOut from '../hooks/useSingOut';
 
 const Navbar = () => {

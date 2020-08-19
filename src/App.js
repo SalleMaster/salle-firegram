@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 // Redux
@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 // Hooks
-import useAuthStatus from './hooks/useAuthStatus';
+// import useAuthStatus from './hooks/useAuthStatus';
 import { setUser } from './actions/auth';
 
 // Components
@@ -17,6 +17,7 @@ import { setUser } from './actions/auth';
 // import ImageModal from './components/ImageModal';
 // import Login from './components/Login';
 import Landing from './components/Landing';
+import routes from './routing/routes';
 
 const App = () => {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -32,7 +33,14 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <Landing selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      <Router>
+        <Fragment>
+          <Switch>
+            <Route components={routes} />
+          </Switch>
+        </Fragment>
+      </Router>
+      {/* <Landing selectedImg={selectedImg} setSelectedImg={setSelectedImg} /> */}
       {/* <Fragment>
         {false ? (
           <Login />
