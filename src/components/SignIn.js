@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // Actions
-import { signUp } from '../actions/auth';
+import { signIn } from '../actions/auth';
 
-const SignUp = ({ user }) => {
+const SignIn = ({ user }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    displayName: '',
   });
 
-  const { email, password, displayName } = formData;
+  const { email, password } = formData;
 
   const onChange = async (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    signUp(formData);
+    signIn(formData);
   };
 
   if (user) {
@@ -27,9 +26,9 @@ const SignUp = ({ user }) => {
   }
 
   return (
-    <div className='sign-up'>
-      <form className='sign-up-form' onSubmit={(e) => onSubmit(e)}>
-        <h1>Sign Up</h1>
+    <div className='sign-in'>
+      <form className='sign-in-form' onSubmit={(e) => onSubmit(e)}>
+        <h1>Sign In</h1>
         <div className='form-control'>
           <label htmlFor='email'>Email</label>
           <input
@@ -50,17 +49,7 @@ const SignUp = ({ user }) => {
             onChange={(e) => onChange(e)}
           />
         </div>
-        <div className='form-control'>
-          <label htmlFor='displayName'>Username</label>
-          <input
-            type='text'
-            name='displayName'
-            id='displayName'
-            value={displayName}
-            onChange={(e) => onChange(e)}
-          />
-        </div>
-        <button type='submit'>Sign Up</button>
+        <button type='submit'>Sign In</button>
       </form>
     </div>
   );
@@ -70,4 +59,4 @@ const mapStateToProps = (state) => ({
   user: state.auth.user,
 });
 
-export default connect(mapStateToProps)(SignUp);
+export default connect(mapStateToProps)(SignIn);

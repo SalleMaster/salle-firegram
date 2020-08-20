@@ -37,3 +37,13 @@ export const signUp = (formData) => {
       alert(err.message);
     });
 };
+
+// Sign In User
+export const signIn = (formData) => {
+  const { email, password } = formData;
+
+  // sign up the user & add firestore data
+  auth.signInWithEmailAndPassword(email, password).catch((err) => {
+    alert(err.message);
+  });
+};
