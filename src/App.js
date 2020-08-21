@@ -17,7 +17,8 @@ import { setUser } from './actions/auth';
 // import ImageGallery from './components/ImageGallery';
 // import ImageModal from './components/ImageModal';
 // import Login from './components/Login';
-import Landing from './components/Landing';
+// import Landing from './components/Landing';
+import Dashboard from './components/Dashboard';
 import Routes from './routing/Routes';
 
 const App = () => {
@@ -37,7 +38,7 @@ const App = () => {
       <Router>
         <Fragment>
           <Switch>
-            <Route exact path='/' component={Landing} />
+            <Route exact path='/' component={Dashboard} />
             <Route component={Routes} />
           </Switch>
         </Fragment>

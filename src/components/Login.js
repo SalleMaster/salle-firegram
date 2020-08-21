@@ -1,10 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Google SignIn
 import useGoogleSignIn from '../hooks/useGoogleSignIn';
 
-const Login = () => {
+const Login = ({ user }) => {
+  if (user) {
+    return <Redirect to='/' />;
+  }
+
   return (
     <div className='login'>
       <div className='login-wrapper'>
@@ -27,4 +32,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => ({
+  user: state.auth.user,
+});
+
+export default connect(mapStateToProps)(Login);

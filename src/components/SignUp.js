@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -65,6 +66,11 @@ const SignUp = ({ user }) => {
     </div>
   );
 };
+
+// SignUp.propTypes = {
+//   signUp: PropTypes.func.isRequired,
+//   user: PropTypes.object,
+// };
 
 const mapStateToProps = (state) => ({
   user: state.auth.user,

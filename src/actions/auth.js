@@ -1,7 +1,7 @@
 import { SET_USER, REMOVE_USER } from './types';
 import { auth } from '../firebase/config';
 
-// Set User
+// Listen for auth changes
 export const setUser = () => (dispatch) => {
   // listen for auth status changes
   auth.onAuthStateChanged((user) => {
@@ -21,12 +21,27 @@ export const setUser = () => (dispatch) => {
   });
 };
 
+// Get current user
+export const getCurrentUser = () => (dispatch) => {
+  var user = auth.currentUser;
+  if (user) {
+    dispatch({
+      type: SET_USER,
+      payload: user,
+    });
+  } else {
+    dispatch({
+      type: REMOVE_USER,
+    });
+  }
+};
+
 // Sign Up User
-export const signUp = (formData) => {
+export const signUp = async (formData) => {
   const { email, password, displayName } = formData;
 
   // sign up the user & add firestore data
-  auth
+  await auth
     .createUserWithEmailAndPassword(email, password)
     .then((cred) => {
       cred.user.updateProfile({
