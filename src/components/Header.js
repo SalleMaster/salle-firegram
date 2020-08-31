@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
-const Header = () => {
+const Header = ({ user }) => {
+  const [currentUser, setCurrentUser] = useState(user);
+
+  useEffect(() => {
+    setCurrentUser(user);
+  }, [user, setCurrentUser]);
+
   return (
     <header className='header'>
       <div className='header-wrapper'>
-        <h1>Your Pictures</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h1>Welcome {user?.displayName}</h1>
+        <p>Your pictures are bellow</p>
       </div>
     </header>
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  user: state.auth.user,
+});
+
+export default connect(mapStateToProps)(Header);

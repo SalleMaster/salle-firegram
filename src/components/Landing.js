@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -36,7 +36,7 @@ const Landing = ({ selectedImg, setSelectedImg, user }) => {
 };
 
 Landing.propTypes = {
-  // user: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({

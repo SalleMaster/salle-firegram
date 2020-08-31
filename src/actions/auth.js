@@ -51,6 +51,8 @@ export const signUp = async (formData) => {
     .catch((err) => {
       alert(err.message);
     });
+
+  getCurrentUser();
 };
 
 // Sign In User
